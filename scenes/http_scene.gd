@@ -1,7 +1,7 @@
 extends Node2D
 
-#var base_url: String = "http://localhost:1160/"
-var base_url: String = "http://vmi388431.contaboserver.net:9999/arithmetic_bubbles/"
+var base_url: String = "http://localhost:1160/"
+# var base_url: String = "http://vmi388431.contaboserver.net:9999/arithmetic_bubbles/"
 var headers = ["Content-Type: application/json"]
 
 func _ready() -> void:
