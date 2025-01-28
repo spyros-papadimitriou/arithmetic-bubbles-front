@@ -1,4 +1,4 @@
-# Arithmetic Bubbles  
+# Arithmetic Bubbles - Frontend System
   
 This project contains the backend code of the [Arithmetic Bubbles](https://globalgamejam.org/games/2025/arithmetic-bubbles-5) game that was implemented in the context of the [Global Game Jam 2025 in Athens](https://globalgamejam.org/jam-sites/2025/global-game-jam-athens).  
   
