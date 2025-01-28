@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsudm3ish2ufc"]
+
+[ext_resource type="Script" path="res://scenes/question_scene.gd" id="1_y3b1w"]
+[ext_resource type="FontFile" uid="uid://c502fg10pvwdo" path="res://assets/fonts/Gorditas-Bold.ttf" id="2_b3bvk"]
+
+[node name="QuestionScene" type="Node2D"]
+script = ExtResource("1_y3b1w")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelInstructions" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(800, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_b3bvk")
+theme_override_font_sizes/font_size = 26
+text = "Choose the bubble with the correct result!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_b3bvk")
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

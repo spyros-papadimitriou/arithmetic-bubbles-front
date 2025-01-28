@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://vfem8mfkxrk2"]
+
+[ext_resource type="Script" path="res://scenes/avatar_scene.gd" id="1_4q385"]
+[ext_resource type="Theme" uid="uid://c7ytyguo6rc7m" path="res://assets/themes/basic_theme.tres" id="2_so285"]
+
+[node name="AvatarScene" type="Node2D"]
+script = ExtResource("1_4q385")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -64.0
+offset_top = 74.0
+offset_right = 64.0
+offset_bottom = 114.0
+theme = ExtResource("2_so285")
+horizontal_alignment = 1

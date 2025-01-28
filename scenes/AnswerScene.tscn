@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp0pewfcgmji3"]
+
+[ext_resource type="Script" path="res://scenes/answer_scene.gd" id="1_vmhsj"]
+[ext_resource type="PackedScene" uid="uid://b3icukcnvg6lo" path="res://scenes/BubbleScene.tscn" id="2_8yijp"]
+[ext_resource type="PackedScene" uid="uid://vfem8mfkxrk2" path="res://scenes/AvatarScene.tscn" id="3_xpa5u"]
+
+[node name="AnswerScene" type="Node2D"]
+script = ExtResource("1_vmhsj")
+
+[node name="AvatarScene" parent="." instance=ExtResource("3_xpa5u")]
+position = Vector2(0, 130)
+
+[node name="BubbleScene" parent="." instance=ExtResource("2_8yijp")]
+position = Vector2(40, 0)
+
+[node name="ColorRectAvatar" type="ColorRect" parent="."]
+offset_left = -45.0
+offset_top = 67.0
+offset_right = 46.0
+offset_bottom = 198.0
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRectBubble" type="ColorRect" parent="."]
+offset_left = -23.0
+offset_top = -54.0
+offset_right = 104.0
+offset_bottom = 53.0
+color = Color(1, 1, 1, 0)
+
+[connection signal="gui_input" from="ColorRectAvatar" to="." method="_on_color_rect_avatar_gui_input"]
+[connection signal="gui_input" from="ColorRectBubble" to="." method="_on_color_rect_bubble_gui_input"]

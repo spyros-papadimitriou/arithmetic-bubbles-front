@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://6ok72lrbjpoy"]
+
+[ext_resource type="Script" path="res://scenes/main_menu_scene.gd" id="1_3y2fl"]
+[ext_resource type="FontFile" uid="uid://c502fg10pvwdo" path="res://assets/fonts/Gorditas-Bold.ttf" id="2_dy8jb"]
+[ext_resource type="Theme" uid="uid://c7ytyguo6rc7m" path="res://assets/themes/basic_theme.tres" id="3_rkkdg"]
+[ext_resource type="AudioStream" uid="uid://b4ub3q3xumekq" path="res://assets/sounds/button-click.wav" id="4_ju66r"]
+
+[node name="MainMenuScene" type="Node2D"]
+script = ExtResource("1_3y2fl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 199.0
+offset_top = 30.0
+offset_right = 601.0
+offset_bottom = 480.0
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_dy8jb")
+theme_override_font_sizes/font_size = 40
+text = "Arithmetic Bubbles"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonStart" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 70)
+layout_mode = 2
+theme = ExtResource("3_rkkdg")
+text = "Start New Exercise"
+
+[node name="ButtonUser" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme = ExtResource("3_rkkdg")
+disabled = true
+text = "User Login"
+
+[node name="ButtonCredits" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme = ExtResource("3_rkkdg")
+text = "View Credits"
+
+[node name="ButtonExit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme = ExtResource("3_rkkdg")
+text = "Exit Game"
+
+[node name="LabelJam" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 30)
+offset_left = 430.0
+offset_top = 560.0
+offset_right = 790.0
+offset_bottom = 590.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_dy8jb")
+text = "Created as part of the Global Game Jam 2025"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LabelTeam" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 30)
+offset_left = 10.0
+offset_top = 560.0
+offset_right = 221.0
+offset_bottom = 590.0
+theme = ExtResource("3_rkkdg")
+text = "STEFAN Educational Games"
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ju66r")
+
+[connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonCredits" to="." method="_on_button_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

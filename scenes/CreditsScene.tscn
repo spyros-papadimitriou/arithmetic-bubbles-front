@@ -1,0 +1,149 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjvq7eyugkaqt"]
+
+[ext_resource type="Script" path="res://scenes/credits_scene.gd" id="1_65ad3"]
+[ext_resource type="FontFile" uid="uid://c502fg10pvwdo" path="res://assets/fonts/Gorditas-Bold.ttf" id="2_8yduq"]
+[ext_resource type="Theme" uid="uid://c7ytyguo6rc7m" path="res://assets/themes/basic_theme.tres" id="2_yg6c3"]
+
+[node name="CreditsScene" type="Node2D"]
+script = ExtResource("1_65ad3")
+
+[node name="Title" type="Label" parent="."]
+custom_minimum_size = Vector2(800, 100)
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8yduq")
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(700, 0)
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 750.0
+offset_bottom = 338.0
+theme = ExtResource("2_yg6c3")
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="LabelDevelopment" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Development:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LabelSpyros" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Spyros Papadimitriou"
+
+[node name="LinkButtonSpyros" type="LinkButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Visit website"
+underline = 1
+uri = "https://www.spyrospapadimitriou.gr"
+
+[node name="LabelIcons" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Icons made by:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LabelFreepik" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Freepik"
+
+[node name="LinkButtonFlaticon" type="LinkButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Visit website"
+underline = 1
+uri = "https://www.flaticon.com/packs/kids-avatars?word=avatar"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="LabelFrontEnd" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Front-end technology:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LabelGodot" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Godot Game Engine"
+
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Visit website"
+underline = 1
+uri = "https://godotengine.org/"
+
+[node name="LabelBackEnd" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Backend-technology:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LabelSpring" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Spring Java Framework"
+
+[node name="LinkSpring" type="LinkButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Visit website"
+underline = 1
+uri = "https://spring.io/"
+
+[node name="LabelApplicationServer" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Application server:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LabelEmbeddedTomcat" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Apache Tomcat"
+
+[node name="LinkTomcat" type="LinkButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Visit website"
+underline = 1
+uri = "https://tomcat.apache.org/"
+
+[node name="LabelDataRepository" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Data Repository:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LabelMariaDB" type="Label" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "MariaDB"
+
+[node name="LinkMariaDB" type="LinkButton" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Visit website"
+underline = 1
+uri = "https://mariadb.org/"
+
+[node name="ButtonMainMenu" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 70)
+offset_left = 250.0
+offset_top = 460.0
+offset_right = 550.0
+offset_bottom = 530.0
+theme = ExtResource("2_yg6c3")
+text = "Go to Main Menu"
+
+[connection signal="pressed" from="ButtonMainMenu" to="." method="_on_button_main_menu_pressed"]

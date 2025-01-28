@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtdaofyu070uk"]
+
+[ext_resource type="Script" path="res://scenes/http_scene.gd" id="1_25n8o"]
+[ext_resource type="Texture2D" uid="uid://c255nk2l8b5sb" path="res://assets/img/loader.png" id="2_kosle"]
+
+[node name="HttpScene" type="Node2D"]
+script = ExtResource("1_25n8o")
+
+[node name="HTTPRequestCreateExercise" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequestSubmitAnswers" type="HTTPRequest" parent="."]
+
+[node name="Loader" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(400, 360)
+texture = ExtResource("2_kosle")
+
+[connection signal="request_completed" from="HTTPRequestCreateExercise" to="." method="_on_http_request_create_exercise_request_completed"]
+[connection signal="request_completed" from="HTTPRequestSubmitAnswers" to="." method="_on_http_request_submit_answers_request_completed"]
